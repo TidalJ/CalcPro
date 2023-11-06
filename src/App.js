@@ -1,3 +1,4 @@
+/* eslint-disable no-eval */
 import "./app.css";
 import { useState } from "react";
 let numList = ['0']
