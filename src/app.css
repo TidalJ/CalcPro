@@ -1,0 +1,162 @@
+.calculator {
+    display: grid;
+    margin-top: 5rem;
+    grid-template-columns: repeat(4, 7rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 7rem);
+    justify-content: center;
+    /* border: 1px solid rgb(179, 179, 179); */
+    border-radius: 1rem;
+    width: 30rem;
+    height: auto;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    box-shadow: inset 20px 20px 60px #c0bbbb,
+        inset -20px -20px 60px #dfdcdc;
+    padding: 25px;
+    background-color: #dde1e7;
+}
+
+.result {
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: #e8e8e8;
+    box-shadow: inset 20px 20px 60px #c5c5c5,
+        inset -20px -20px 60px #ffffff;
+    transition: 1s;
+    margin-bottom: 10px;
+}
+
+.pre-num {
+    /* border: 1px rgb(180, 180, 180) solid; */
+    width: 100%;
+    word-wrap: break-word;
+    border-radius: 0.4rem;
+
+    /* display: flex; */
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+.ac {
+    grid-column: span 3;
+}
+
+.button {
+    position: relative;
+    font-size: 2rem;
+    padding: 0.7em 1.4em;
+    background-color: #e6153b;
+    text-decoration: none;
+    border: none;
+    border-radius: 1.5rem;
+    color: #DEDEDE;
+    box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);
+    opacity: 0.85;
+    transition: all 0.2s ease;
+    transform: scale(0.95);
+
+}
+
+.button:active {
+    transform: scale(0.7);
+
+
+}
+
+.button:before,
+.button:after {
+    position: absolute;
+    content: "";
+    width: 80%;
+    left: 50%;
+    top: 20%;
+    height: 80%;
+    transform: translateX(-50%);
+    z-index: -1000;
+    background-repeat: no-repeat;
+
+}
+
+.button:active:before {
+    top: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+        10% 10%, 18% 18%;
+    background-position: 50% 120%;
+    animation: greentopBubbles 0.6s ease;
+}
+
+@keyframes greentopBubbles {
+    0% {
+        background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+            40% 90%, 55% 90%, 70% 90%;
+    }
+
+    50% {
+        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+            50% 50%, 65% 20%, 90% 30%;
+    }
+
+    100% {
+        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+            50% 40%, 65% 10%, 90% 20%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+.button:active::after {
+    bottom: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+    background-position: 50% 0%;
+    animation: greenbottomBubbles 0.6s ease;
+}
+
+@keyframes greenbottomBubbles {
+    0% {
+        background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+            70% -10%, 70% 0%;
+    }
+
+    50% {
+        background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+            105% 0%;
+    }
+
+    100% {
+        background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+            110% 10%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+body {
+    background-color: #e8e8e8;
+}
+
+.result {
+    /* border: 1px solid red; */
+    font-size: 1.5rem;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: column;
+
+}
