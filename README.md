@@ -1,1 +1,1 @@
-[Web Calculator](https://calculator7277.netlify.app/)
+[CalcPro](https://calculator7277.netlify.app/)
